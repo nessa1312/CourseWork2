@@ -86,10 +86,7 @@ public class DailyPlannerUtil {
                 taskArrayList.add(task);
             }
             if (task.getNextDateTask() == null){
-                    taskArrayList.add(task);
-            }
-            if (task.getPeriodicity() == ONE_TIME){
-                taskArrayList.add(task);
+                System.out.println(" ");
             }
             if (task.getPeriodicity() == DAILY) {
                 taskArrayList.add(task);
