@@ -1,4 +1,4 @@
-package DailyPlanner;
+package dailyPlanner;
 
 import Util.Periodicity;
 import Util.ValidateUtil;
@@ -16,7 +16,7 @@ public class DailyPlanner implements Comparable <DailyPlanner> {
     private Periodicity periodicity;
     private boolean deleted;
 
-    public DailyPlanner (String title, String description, Periodicity periodicity, boolean isWorkTask) {
+    public DailyPlanner (String s, String title, String description, Periodicity periodicity, boolean isWorkTask) {
         setTitle(title);
         setDescription(description);
         this.createdTime = LocalDateTime.now();
@@ -25,6 +25,7 @@ public class DailyPlanner implements Comparable <DailyPlanner> {
         this.id = counter;
         this.periodicity = periodicity;
     }
+
 
     public void setTitle(String title) {
         this.title = ValidateUtil.validateString (title);

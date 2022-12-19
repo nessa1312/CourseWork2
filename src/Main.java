@@ -1,4 +1,4 @@
-import DailyPlanner.DailyPlannerUtil;
+import dailyPlanner.DailyPlannerUtil;
 
 import java.util.Scanner;
 

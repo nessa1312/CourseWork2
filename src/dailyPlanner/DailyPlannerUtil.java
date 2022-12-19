@@ -1,4 +1,4 @@
-package DailyPlanner;
+package dailyPlanner;
 
 import Util.Periodicity;
 import Util.ValidateUtil;
@@ -24,6 +24,7 @@ public class DailyPlannerUtil {
     public static void addTask(Scanner scanner) {
         DailyPlanner task = new DailyPlanner(
                 inputTitle(scanner),
+                inputDate(scanner),
                 inputDescription(scanner),
                 inputPeriodicity(scanner),
                 inputTypeTask(scanner));
@@ -176,20 +177,19 @@ public class DailyPlannerUtil {
     }
 
     public static Periodicity inputPeriodicity(Scanner scanner) {
-        try {
+        int stringPeriodicity;
+        label:
+        while (true) {
             System.out.println("Введите признак повторяемости задачи: \n" +
                     "1 - однократная,\n" +
                     "2 - ежедневная,\n" +
                     "3 - еженедельная,\n" +
                     "4 - ежемесячная,\n" +
                     "5 - ежегодная.");
-            int stringPeriodicity = scanner.nextInt();
-
-            return ValidateUtil.validatePeriodicity(stringPeriodicity);
-
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+            stringPeriodicity = scanner.nextInt();
+            break label;
         }
+        return ValidateUtil.validatePeriodicity(stringPeriodicity);
     }
 
     public static boolean inputTypeTask(Scanner scanner) {
